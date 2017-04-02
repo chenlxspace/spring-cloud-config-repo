@@ -1,0 +1,4 @@
+﻿spring.profiles.active=test
+spring.application.name=user-service
+my.name=DEFAULT
+server.port=9005
