@@ -1,0 +1,66 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: test
+
+---
+spring:
+  profiles: test
+  application:
+    name: user-service
+server:
+  port: 9006
+eureka:
+  instance:
+    hostname: 192.168.0.104
+    ip-address: 192.168.0.104
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+  client:
+     register-with-eureka: true
+     fetch-registry: true
+     service-url:
+      defaultZone: http://192.168.0.104:8761/eureka/
+my:
+  name: TEST
+---
+spring:
+  profiles: dev
+  application:
+    name: user-service
+server:
+  port: 9007
+eureka:
+  instance:
+    hostname: 192.168.0.104
+    ip-address: 192.168.0.104
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+  client:
+     register-with-eureka: true
+     fetch-registry: true
+     service-url:
+      defaultZone: http://192.168.0.104:8761/eureka/
+my:
+  name: DEV
+---
+spring:
+  profiles: prod
+  application:
+    name: user-service
+server:
+  port: 9008
+eureka:
+  instance:
+    hostname: 192.168.0.104
+    ip-address: 192.168.0.104
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+  client:
+     register-with-eureka: true
+     fetch-registry: true
+     service-url:
+      defaultZone: http://192.168.0.104:8761/eureka/
+my:
+  name: PROD
