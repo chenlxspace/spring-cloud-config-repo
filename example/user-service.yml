@@ -7,7 +7,7 @@ spring:
 my:
   name: DEFAULT  
 server:
-  port: 9006
+  port: 9005
   
 ---
 spring:
