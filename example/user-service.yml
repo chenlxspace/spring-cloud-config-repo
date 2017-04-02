@@ -1,9 +1,14 @@
+#spring:
+ # profiles:
+  #  active: test
 spring:
   application:
     name: user-service
-  profiles:
-    active: test
-
+my:
+  name: DEFAULT  
+server:
+  port: 9006
+  
 ---
 spring:
   profiles: test
