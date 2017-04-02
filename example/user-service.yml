@@ -2,6 +2,8 @@
  # profiles:
   #  active: test
 spring:
+  profiles: 
+    active: test
   application:
     name: user-service
 my:
