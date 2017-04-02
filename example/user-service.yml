@@ -1,16 +1,13 @@
-#spring:
- # profiles:
-  #  active: test
-spring:
-  profiles: 
+﻿spring:
+  profiles:
     active: test
   application:
     name: user-service
 my:
-  name: DEFAULT  
+  name: DEFAULT
 server:
   port: 9005
-  
+
 ---
 spring:
   profiles: test
@@ -25,12 +22,13 @@ eureka:
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
-     register-with-eureka: true
-     fetch-registry: true
-     service-url:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://192.168.0.104:8761/eureka/
 my:
   name: TEST
+
 ---
 spring:
   profiles: dev
@@ -45,9 +43,9 @@ eureka:
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
-     register-with-eureka: true
-     fetch-registry: true
-     service-url:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://192.168.0.104:8761/eureka/
 my:
   name: DEV
@@ -65,9 +63,9 @@ eureka:
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
-     register-with-eureka: true
-     fetch-registry: true
-     service-url:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://192.168.0.104:8761/eureka/
 my:
   name: PROD
